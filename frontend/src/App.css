@@ -1,0 +1,156 @@
+/* D:\SmartDoc-Insight\frontend\src\App.css */
+
+/* Import Tailwind's base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles for a Beautiful Look */
+body {
+  font-family: 'Inter', sans-serif; /* Consistent modern font */
+  /* Ensure body is relative for absolute positioning of modal and background particles */
+  position: relative; 
+  /* Prevent horizontal scrollbar from background particles exceeding viewport */
+  overflow-x: hidden; 
+  /* Smooth scrolling behavior */
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar for the Document Viewer */
+/* This ensures a consistent and aesthetically pleasing scrollbar across browsers */
+.document-viewer-scroll-area {
+  /* Height and overflow properties are set inline in App.jsx for dynamic control */
+}
+
+/* Styling for Webkit browsers (Chrome, Safari, Edge) */
+.document-viewer-scroll-area::-webkit-scrollbar {
+  width: 12px; /* Wider scrollbar for better visibility */
+}
+
+.document-viewer-scroll-area::-webkit-scrollbar-track {
+  background: #f3f4f6; /* Light gray track */
+  border-radius: 10px;
+}
+
+.document-viewer-scroll-area::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #8b5cf6, #a855f6); /* Purple gradient thumb */
+  border-radius: 10px;
+  border: 2px solid #f3f4f6; /* Border to make thumb appear floating */
+}
+
+.document-viewer-scroll-area::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #7c3aed, #9333ea); /* Darker purple on hover */
+}
+
+/* Firefox scrollbar styling */
+.document-viewer-scroll-area {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: #8b5cf6 #f3f4f6; /* thumb and track color */
+}
+
+/* Ensure Tippy.js tooltips are above everything else */
+/* Important for hover definitions to always be visible on top */
+.tippy-box {
+  z-index: 9999 !important; /* Force Tippy to be on top */
+  /* Custom tooltip styling for a cohesive look */
+  background: linear-gradient(to bottom right, #1f2937, #374151); /* Dark gradient background */
+  color: #f9fafb; /* Light text color */
+  border-radius: 0.75rem; /* rounded-xl */
+  padding: 0.75rem 1rem; /* p-3 p-4 */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  border: 1px solid rgba(107, 114, 128, 0.3); /* subtle border */
+}
+
+/* Keyframe animations for dynamic UI elements */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apply animations to elements */
+.animate-fade-in-up {
+  animation: fade-in-up 0.3s ease-out forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Utility for animation delays (used in App.jsx inline style) */
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Additional custom styles for gradients and text effects */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.text-transparent {
+  color: transparent;
+}
+.drop-shadow-2xl {
+  filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.25));
+}
+
+/* Backdrop blur effect for modals and certain containers */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+.backdrop-blur-xl {
+  backdrop-filter: blur(12px);
+}
+
+/* Specific styling for highlight spans to ensure they look good */
+span.bg-yellow-300,
+span.bg-green-300 {
+  display: inline-block; /* Ensures padding and border apply correctly */
+  line-height: 1.2; /* Adjust line height within highlights if needed */
+  vertical-align: baseline; /* Align with text baseline */
+}

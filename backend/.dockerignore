@@ -1,0 +1,15 @@
+# backend/.dockerignore
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.ipynb_checkpoints
+.pytest_cache
+.vscode/
+.git/
+.gitignore
+.env
+Dockerfile
+README.md

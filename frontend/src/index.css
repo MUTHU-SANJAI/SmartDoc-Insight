@@ -1,0 +1,9 @@
+/* D:\SmartDoc-Insight\frontend\src\index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: Add a base font */
+body {
+  font-family: 'Inter', sans-serif;
+}
